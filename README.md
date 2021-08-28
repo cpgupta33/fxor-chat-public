@@ -72,9 +72,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ### GIT Command
 
 echo "# fxor-chat-public" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin git@github.com:cpgupta33/fxor-chat-public.git
-git push -u origin main
+## git init
+## git add README.md
+## git commit -m "first commit"
+## git branch -M main
+## git remote add origin git@github.com:cpgupta33/fxor-chat-public.git
+## git push -u origin main
