@@ -1,4 +1,6 @@
-import firebase from "firebase";
+import { initializeApp } from 'firebase/app';
+import { getDatabase } from "firebase/database";
+import { getAuth, signInWithPhoneNumber, RecaptchaVerifier } from "firebase/auth";
 
 const config = {
   apiKey: "AIzaSyCYn3YdITKxvqhKboCVDnmtlwk51goxmfE",
@@ -9,6 +11,6 @@ const config = {
   appId: "1:618368464210:web:7baa07a5defa5764b8b68b",
   measurementId: "G-W66YYCTV9M",
 };
-firebase.initializeApp(config);
-export const auth = firebase.auth;
-export const db = firebase.database();
+initializeApp(config);
+export const auth = getAuth();
+export const database = getDatabase();
