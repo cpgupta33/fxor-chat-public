@@ -13,11 +13,19 @@ import Chat from "./Pages/Chat";
 import Signup from "./Pages/Signup";
 import Login from "./Pages/Login";
 import { auth } from "./Services/firebase";
-import { signInWithGitHub, signInWithGoogle } from "./Helpers/auth";
+import {
+  signInWithGitHub,
+  signInWithGoogle,
+  signOutUser,
+} from "./Helpers/auth";
+import Text from "antd/lib/typography/Text";
 
 const App = () => {
+  function getUserName() {
+    return auth && auth.currentUser && auth.currentUser.displayName;
+  }
   return (
-    <div className="App">
+    <div className="App" style={{ marginTop: 20 }}>
       <DatePicker />
       <Button
         type="primary"
@@ -26,9 +34,21 @@ const App = () => {
       >
         Sign up with Google
       </Button>
-      <Button type="dashed" type="button" onClick={() => signInWithGitHub()}>
+      <Button
+        type="dashed"
+        onClick={() => signInWithGitHub()}
+        style={{ marginLeft: 8 }}
+      >
         Sign up with GitHub
       </Button>
+      <Button
+        type="danger"
+        onClick={() => signOutUser}
+        style={{ marginLeft: 8 }}
+      >
+        SignOut
+      </Button>
+      <Text>{getUserName()}</Text>
     </div>
   );
 };
